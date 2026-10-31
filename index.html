@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b16">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<title>Pyramid Studio — Premium Web Studio</title>
+<meta name="description" content="Pyramid Studio — premium web dizayn, biznes saytlar, online do‘konlar, ta’lim platformalari va Google Search uchun tayyor web yechimlar.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#070b16;color:#f7f8ff;overflow-x:hidden}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}
+:root{--p:#7457ff;--b:#397dff;--c:#20d7ff;--m:#aab3c7;--card:#101728;--line:#ffffff15;--ok:#61e5a4}
+.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 12% 5%,#6345ff22,transparent 26%),radial-gradient(circle at 90% 45%,#20d7ff13,transparent 25%),#070b16}
+.gridbg{position:fixed;inset:0;z-index:-1;opacity:.15;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 7%;background:#070b16d9;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.4px}.mark{width:30px;height:30px;border:1px solid #8c7aff;border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:#7457ff1a}.mark i{width:10px;height:10px;border-top:2px solid #fff;border-left:2px solid #fff}.logo span{color:#8d7aff}
+.links{display:flex;gap:22px;align-items:center}.links>a:not(.btn){font-size:14px;color:#c9d0df}.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:13px;background:linear-gradient(135deg,var(--p),var(--b));color:#fff;font-weight:850;box-shadow:0 12px 28px #4f39d933}.btn:hover{filter:brightness(1.08)}.ghost{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid #ffffff24;border-radius:13px;font-weight:800;background:#ffffff05;cursor:pointer}
+.hero{min-height:84vh;padding:82px 7% 70px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:50px}.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #ffffff20;border-radius:99px;color:#d4daea;background:#ffffff06;font-size:12px;font-weight:800}.dot{width:7px;height:7px;background:var(--ok);border-radius:50%;box-shadow:0 0 18px var(--ok)}
+h1{font-size:clamp(52px,7.5vw,96px);line-height:.91;letter-spacing:-5px;margin:22px 0}.grad{background:linear-gradient(90deg,#fff 5%,#9c8dff 52%,#36ddff);-webkit-background-clip:text;color:transparent}.hero p{max-width:680px;color:var(--m);font-size:19px;line-height:1.72}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.proof{display:flex;gap:18px;flex-wrap:wrap;margin-top:34px;color:#aeb7cb;font-size:13px}.proof b{color:#fff}
+.heroVisual{height:510px;border:1px solid #ffffff18;border-radius:38px;background:radial-gradient(circle at 25% 15%,#7457ff8a,transparent 32%),radial-gradient(circle at 75% 80%,#1ecfff55,transparent 34%),#0c1220;position:relative;box-shadow:0 40px 100px #0008;overflow:hidden}
+.browser{position:absolute;left:45px;right:28px;top:60px;bottom:48px;background:#f7f9ff;color:#111827;border-radius:23px;transform:rotate(3deg);box-shadow:0 30px 80px #0008;overflow:hidden}.bar{height:42px;display:flex;align-items:center;gap:7px;padding:0 15px;border-bottom:1px solid #e7e9f1}.bar i{width:8px;height:8px;background:#c9cfda;border-radius:50%}.screen{padding:28px}.screen small{font-weight:900;color:#7457ff}.screen h3{font-size:38px;line-height:1;margin:13px 0}.screen p{color:#697386;font-size:13px;line-height:1.5}.miniCards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.mini{height:90px;border-radius:14px;background:linear-gradient(135deg,#eeeaff,#e9faff);padding:12px}.mini:nth-child(2){background:linear-gradient(135deg,#fff2e4,#ffe7bd)}
+.floatCard{position:absolute;right:9px;bottom:15px;width:205px;padding:14px;border:1px solid #ffffff20;background:#11192ae6;backdrop-filter:blur(12px);border-radius:17px;box-shadow:0 18px 40px #0008}.floatCard b{font-size:13px}.floatCard p{margin:5px 0 0;color:#aeb7cb;font-size:11px;line-height:1.4}
+section{padding:88px 7%}.ey{font-size:12px;letter-spacing:2px;color:#8d7aff;font-weight:950}.title{font-size:clamp(36px,5vw,62px);letter-spacing:-3px;line-height:1.02;margin:10px 0 38px}.sub{max-width:760px;color:var(--m);line-height:1.7;margin-top:-20px;margin-bottom:36px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{position:relative;padding:28px;border-radius:23px;background:linear-gradient(145deg,#11192b,#0d1422);border:1px solid var(--line);overflow:hidden;transition:.25s}.service:hover{transform:translateY(-6px);border-color:#755cff80}.service .ico{font-size:29px}.service h3{font-size:21px;margin:18px 0 8px}.service p{color:var(--m);line-height:1.6;font-size:14px}.service button{margin-top:8px;background:none;border:0;color:#9e91ff;font-weight:850;padding:0;cursor:pointer}
+.showcase{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.featured,.project{border:1px solid var(--line);background:#0f1728;border-radius:28px;overflow:hidden}.featuredShot{min-height:400px;padding:36px;background:linear-gradient(135deg,#effaff,#f8fbff);color:#0b5dbe;position:relative;overflow:hidden}.featuredShot:after{content:"";position:absolute;width:270px;height:270px;border-radius:50%;background:#22b7ff1f;right:-55px;top:-50px}.uiwindow{background:#fff;border-radius:20px;box-shadow:0 24px 70px #2568a828;padding:22px;position:relative;z-index:2}.blue{height:10px;border-radius:8px;background:#cde7ff;margin:10px 0}.blue:nth-of-type(2){width:67%}.lessonRow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.lesson{height:92px;border-radius:13px;background:#eff7ff;border:1px solid #dcecff;padding:12px;font-size:12px;font-weight:800}.projectInfo{padding:25px}.kicker{display:inline-block;border-radius:99px;padding:6px 9px;background:#ffffff0b;color:#c4cde0;font-size:10px;font-weight:900}.projectInfo h3{font-size:24px;margin:12px 0 8px}.projectInfo p{color:var(--m);font-size:14px;line-height:1.6}.projectActions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.sm{padding:9px 12px;border-radius:10px;border:1px solid #ffffff1b;background:#ffffff06;color:#fff;font-weight:750;cursor:pointer}
+.sideProjects{display:grid;gap:20px}.projectShot{height:190px;padding:22px;display:flex;align-items:end;font-size:28px;font-weight:950}.clinic{background:linear-gradient(135deg,#081d2d,#123c51)}.coffee{background:linear-gradient(135deg,#4a291a,#d49158);color:#fff}.shop{background:linear-gradient(135deg,#25144d,#6e54d8)}
+.samples{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.sample{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#0f1727}.sampleVisual{height:235px;padding:21px;position:relative}.sampleVisual .mockNav{height:12px;width:45%;background:#ffffff33;border-radius:8px}.sampleVisual h4{font-size:29px;line-height:1.05;margin:45px 0 12px;max-width:80%}.sampleVisual .mockBtn{width:100px;height:32px;border-radius:9px;background:#fff}.saas{background:linear-gradient(145deg,#2b1e55,#7658d8)}.realty{background:linear-gradient(145deg,#13241f,#4c987b)}.beauty{background:linear-gradient(145deg,#432731,#be7e93)}.sampleText{padding:20px}.sampleText p{color:var(--m);font-size:13px;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{padding:21px;background:#ffffff06;border-top:2px solid var(--p);border-radius:0 0 18px 18px}.step small{color:#8d7aff;font-weight:900}.step p{color:var(--m);font-size:12px;line-height:1.5}
+.leadWrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}.leadPitch{padding:34px;border-radius:28px;background:linear-gradient(145deg,#111a2d,#0d1422);border:1px solid var(--line)}.leadPitch h3{font-size:33px;margin:10px 0}.leadPitch p{color:var(--m);line-height:1.7}.leadList{display:grid;gap:10px;margin-top:22px}.leadItem{padding:12px;border:1px solid #ffffff13;border-radius:12px;background:#ffffff04;color:#dbe1ed;font-size:13px}
+.form{padding:30px;border-radius:28px;background:#f7f9ff;color:#101727}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:13px}.field label{display:block;font-size:12px;font-weight:850;margin-bottom:7px;color:#4d5668}.field input,.field select,.field textarea{width:100%;border:1px solid #dce1ec;border-radius:12px;padding:13px 14px;background:#fff;color:#101727;outline:none}.field textarea{min-height:120px;resize:vertical}.formNote{font-size:11px;color:#7c8798;line-height:1.5;margin-top:10px}.success{display:none;padding:13px;border-radius:12px;background:#e8fff2;color:#176b43;margin-top:12px;font-size:13px}
+.contact{text-align:center;padding:110px 7%;background:radial-gradient(circle at center,#624cff42,transparent 50%)}.phone{font-size:clamp(34px,6vw,65px);font-weight:950;letter-spacing:-2px;margin:17px 0}
+footer{padding:30px 7%;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;color:#939db1;font-size:13px}
+.chatfab{position:fixed;right:22px;bottom:22px;z-index:60;border:0;border-radius:18px;padding:15px 18px;background:linear-gradient(135deg,#7457ff,#20a8ff);color:#fff;font-weight:900;box-shadow:0 18px 45px #0008;cursor:pointer}.chatbox{position:fixed;right:22px;bottom:88px;width:min(405px,calc(100vw - 28px));height:590px;z-index:70;background:#0d1424;border:1px solid #ffffff20;border-radius:24px;box-shadow:0 30px 90px #000b;display:none;overflow:hidden}.chatbox.open{display:flex;flex-direction:column}.chathead{padding:18px 20px;border-bottom:1px solid #ffffff12;display:flex;justify-content:space-between}.chathead small{color:var(--ok)}.chatbody{flex:1;padding:18px;overflow:auto;background:radial-gradient(circle at 20% 10%,#7457ff18,transparent 35%)}.msg{max-width:87%;padding:12px 14px;border-radius:16px;margin:9px 0;line-height:1.45;font-size:13px;white-space:pre-wrap}.msg.ai{background:#161f35;border:1px solid #ffffff10}.msg.me{margin-left:auto;background:linear-gradient(135deg,#7457ff,#397dff)}.chips{display:flex;gap:7px;flex-wrap:wrap;padding:0 14px 11px}.chip{border:1px solid #ffffff18;background:#ffffff08;color:#d9def0;border-radius:99px;padding:8px 10px;font-size:11px;cursor:pointer}.composer{display:flex;gap:8px;padding:13px;border-top:1px solid #ffffff12}.composer input{flex:1;background:#080d18;border:1px solid #ffffff1c;color:white;border-radius:13px;padding:13px;outline:none}.send{border:0;border-radius:12px;padding:0 15px;background:#7457ff;color:white;font-weight:900;cursor:pointer}
+.modal{position:fixed;inset:0;z-index:100;background:#02050bdc;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalCard{max-width:950px;width:100%;max-height:88vh;overflow:auto;border:1px solid #ffffff20;background:#0e1627;border-radius:26px;padding:26px;box-shadow:0 40px 100px #000}.modalTop{display:flex;justify-content:space-between;gap:20px}.close{border:0;background:#ffffff0b;color:#fff;width:38px;height:38px;border-radius:11px;font-size:22px;cursor:pointer}.modalDemo{margin-top:20px;min-height:390px;border-radius:20px;overflow:hidden}.demoClinic{background:#eefaff;color:#14384b;padding:28px}.demoCoffee{background:#fbf1e7;color:#3a261d;padding:28px}.demoShop{background:#f0edff;color:#251856;padding:28px}.demoHeader{display:flex;justify-content:space-between;gap:15px;font-weight:900}.demoHero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;padding:45px 0}.demoHero h4{font-size:40px;line-height:1;margin:0 0 14px}.demoImg{height:190px;border-radius:20px;background:linear-gradient(135deg,#ffffffbb,#ffffff55);border:1px solid #ffffff}.demoBlocks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.demoBlocks div{padding:18px;border-radius:14px;background:#ffffffb5}
+@media(max-width:900px){.links>a:not(.btn){display:none}.hero,.showcase,.leadWrap{grid-template-columns:1fr}.heroVisual{height:420px}.services,.samples{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.browser{left:25px}.sideProjects{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}}
+@media(max-width:620px){section{padding:68px 5%}.hero{padding:60px 5%}.services,.samples,.sideProjects{grid-template-columns:1fr}.heroVisual{height:340px}.browser{top:35px;left:18px;right:18px;bottom:30px}.screen{padding:18px}.screen h3{font-size:30px}.floatCard{display:none}.steps{grid-template-columns:1fr}.demoHero{grid-template-columns:1fr}.demoBlocks{grid-template-columns:1fr}.chatbox{right:14px;bottom:80px;height:72vh}.chatfab{right:14px;max-width:calc(100vw - 28px)}h1{letter-spacing:-3px}.title{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="gridbg"></div>
+<nav>
+  <div class="logo"><div class="mark"><i></i></div>PYRAMID <span>STUDIO</span></div>
+  <div class="links"><a href="#services">Xizmatlar</a><a href="#works">Portfolio</a><a href="#samples">Namunalar</a><a href="#process">Jarayon</a><a class="btn" href="#order">Loyiha boshlash</a></div>
+</nav>
+
+<header class="hero">
+<div>
+  <span class="badge"><span class="dot"></span> WEB • UI/UX • AI • GOOGLE SEARCH</span>
+  <h1>G‘oyangizni <span class="grad">internetdagi biznesga</span> aylantiramiz.</h1>
+  <p>Mijoz saytingizga kirishi, xizmatlaringizni tushunishi va “men ham shunday sayt xohlayman” deyishi kerak. Pyramid Studio aynan shunday taassurot va natijaga yo‘naltirilgan web-loyihalar yaratadi.</p>
+  <div class="actions"><button class="btn" onclick="openChat()">💬 AI bilan g‘oyani gaplashish</button><a class="ghost" href="#works">Ishlarni ko‘rish ↓</a></div>
+  <div class="proof"><span><b>✓</b> Mobil-first</span><span><b>✓</b> HTTPS</span><span><b>✓</b> Search-ready</span><span><b>✓</b> +998 93 573 77 16</span></div>
+</div>
+<div class="heroVisual">
+  <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="screen"><small>YOUR BUSINESS / 2026</small><h3>Premium web experience.</h3><p>Kuchli vizual, aniq CTA, foydalanuvchi yo‘li va sotuvga yo‘naltirilgan struktura.</p><div class="miniCards"><div class="mini">Services<br><b>Clear offer</b></div><div class="mini">Contact<br><b>Fast lead</b></div></div></div></div>
+  <div class="floatCard"><b>Yangi so‘rov tayyor ✦</b><p>Mijoz g‘oyasini AI bilan aniqlashtirib, kontaktini qoldirishi mumkin.</p></div>
+</div>
+</header>
+
+<section id="services">
+<div class="ey">XIZMATLAR</div><h2 class="title">Faqat chiroyli emas. Ishlaydigan sayt.</h2>
+<p class="sub">Har bir xizmat kartasidan AI konsultantga o‘tib, mijoz o‘z g‘oyasini batafsil tushuntira oladi.</p>
+<div class="services">
+  <div class="service"><div class="ico">⚡</div><h3>Landing Page</h3><p>Reklama, yangi mahsulot yoki xizmat uchun konversiyaga yo‘naltirilgan premium bir sahifali sayt.</p><button onclick="serviceChat('Landing page')">AI bilan muhokama →</button></div>
+  <div class="service"><div class="ico">🏢</div><h3>Biznes sayti</h3><p>Kompaniya, klinika, restoran, servis, ishlab chiqarish va professional xizmatlar uchun.</p><button onclick="serviceChat('Biznes sayti')">AI bilan muhokama →</button></div>
+  <div class="service"><div class="ico">🛒</div><h3>Online do‘kon</h3><p>Katalog, mahsulot kartasi, savat, buyurtma va mijoz yo‘li bilan e-commerce interfeys.</p><button onclick="serviceChat('Online do‘kon')">AI bilan muhokama →</button></div>
+  <div class="service"><div class="ico">🎓</div><h3>Ta’lim platformasi</h3><p>Darslar, test, progress, o‘yin, kabinet, AI yordamchi va gamification konsepsiyasi.</p><button onclick="serviceChat('Ta’lim platformasi')">AI bilan muhokama →</button></div>
+  <div class="service"><div class="ico">🤖</div><h3>AI konsultant</h3><p>Sayt ichida mijozning g‘oyasini aniqlashtiradigan, savollar beradigan va brief tayyorlaydigan yordamchi.</p><button onclick="openChat()">AI ni sinash →</button></div>
+  <div class="service"><div class="ico">🔎</div><h3>Google Search tayyorligi</h3><p>SEO metadata, sitemap, robots, HTTPS va Search Console uchun texnik tayyorgarlik.</p><button onclick="serviceChat('Google Search / SEO')">Batafsil →</button></div>
+</div>
+</section>
+
+<section id="works">
+<div class="ey">PORTFOLIO</div><h2 class="title">Ko‘rib turib buyurtma beradigan daraja.</h2>
+<div class="showcase">
+  <div class="featured">
+    <div class="featuredShot"><div class="uiwindow"><b>TILANDIYA.UZ</b><div class="blue"></div><div class="blue"></div><div class="lessonRow"><div class="lesson">Diagnostika<br>A0 → C1</div><div class="lesson">Interaktiv<br>darslar</div><div class="lesson">AI yordamchi<br>va o‘yinlar</div></div></div></div>
+    <div class="projectInfo"><span class="kicker">REAL PROJECT / INTERNAL CASE</span><h3>Tilandiya — ta’lim platformasi</h3><p>O‘zbek tili va adabiyotini o‘rganish uchun diagnostika, dars yo‘li, o‘yinlar, ustozlar va AI yordamchi konsepsiyasi.</p><div class="projectActions"><a class="sm" href="https://boburshoxbahtiyorov-max.github.io/tilandiya/" target="_blank">Live demo ↗</a><button class="sm" onclick="serviceChat('Tilandiya kabi ta’lim platformasi')">Shunga o‘xshash sayt</button></div></div>
+  </div>
+  <div class="sideProjects">
+    <div class="project"><div class="projectShot clinic">NOVA MEDICAL</div><div class="projectInfo"><span class="kicker">DEMO CONCEPT</span><h3>Premium klinika</h3><p>Shifokorlar, xizmatlar, online yozilish va ishonchga yo‘naltirilgan UX.</p><button class="sm" onclick="openDemo('clinic')">Namunani ko‘rish</button></div></div>
+    <div class="project"><div class="projectShot coffee">URBAN ROAST</div><div class="projectInfo"><span class="kicker">DEMO CONCEPT</span><h3>Kafe / restoran</h3><p>Menyu, lokatsiya, aksiyalar va bron qilishga yo‘naltirilgan landing.</p><button class="sm" onclick="openDemo('coffee')">Namunani ko‘rish</button></div></div>
+  </div>
+</div>
+</section>
+
+<section id="samples">
+<div class="ey">KO‘PROQ NAMUNALAR</div><h2 class="title">Turli bizneslar uchun tayyor yo‘nalishlar.</h2>
+<p class="sub">Quyidagilar real mijoz loyihasi deb ko‘rsatilmaydi — ular Pyramid Studio imkoniyatini namoyish qiluvchi konseptlar.</p>
+<div class="samples">
+  <div class="sample"><div class="sampleVisual saas"><div class="mockNav"></div><h4>Fintech dashboard that feels effortless.</h4><div class="mockBtn"></div></div><div class="sampleText"><b>Fintech / SaaS</b><p>Dashboard, analytics, tariflar, onboarding va account UX.</p><button class="sm" onclick="serviceChat('Fintech yoki SaaS sayt')">Shunga o‘xshash →</button></div></div>
+  <div class="sample"><div class="sampleVisual realty"><div class="mockNav"></div><h4>Property search, reimagined.</h4><div class="mockBtn"></div></div><div class="sampleText"><b>Ko‘chmas mulk</b><p>Obyekt katalogi, filtr, lokatsiya, lead forma va premium listing.</p><button class="sm" onclick="serviceChat('Ko‘chmas mulk sayti')">Shunga o‘xshash →</button></div></div>
+  <div class="sample"><div class="sampleVisual beauty"><div class="mockNav"></div><h4>Beauty brand with premium presence.</h4><div class="mockBtn"></div></div><div class="sampleText"><b>Beauty / Personal brand</b><p>Xizmatlar, portfolio, booking va Instagramga mos vizual uslub.</p><button class="sm" onclick="serviceChat('Beauty yoki personal brand sayt')">Shunga o‘xshash →</button></div></div>
+</div>
+</section>
+
+<section id="process">
+<div class="ey">JARAYON</div><h2 class="title">5 qadamda g‘oyadan online biznesgacha.</h2>
+<div class="steps">
+<div class="step"><small>01 / BRIEF</small><h3>G‘oya</h3><p>AI yoki forma orqali maqsad, auditoriya va kerakli funksiyalarni aniqlaymiz.</p></div>
+<div class="step"><small>02 / UX</small><h3>Struktura</h3><p>Mijoz qayerdan kiradi, nimani ko‘radi va qayerda buyurtma beradi — yo‘lni quramiz.</p></div>
+<div class="step"><small>03 / UI</small><h3>Dizayn</h3><p>Biznesingizga mos premium vizual til va responsive sahifalar.</p></div>
+<div class="step"><small>04 / BUILD</small><h3>Ishlab chiqish</h3><p>Interaktiv bloklar, mobil moslashuv va zarur funksiyalar.</p></div>
+<div class="step"><small>05 / LAUNCH</small><h3>Online</h3><p>HTTPS, SEO tayyorligi, hosting va Google Search uchun texnik bosqichlar.</p></div>
+</div>
+</section>
+
+<section id="order">
+<div class="ey">YANGI BUYURTMA</div><h2 class="title">Mijoz shu yerda sizga so‘rov qoldiradi.</h2>
+<div class="leadWrap">
+  <div class="leadPitch"><span class="badge"><span class="dot"></span> LEAD CAPTURE</span><h3>“Men ham shunday sayt xohlayman.”</h3><p>Forma mijozning asosiy ma’lumotini yig‘adi va so‘rovni Pyramid Studio bazasiga yuboradi. <b>+998 93 573 77 16</b> aloqa raqami o‘zgarishsiz qoldi.</p>
+    <div class="leadList"><div class="leadItem">✓ Ism va telefon raqami</div><div class="leadItem">✓ Biznes turi va sayt formati</div><div class="leadItem">✓ G‘oya va kerakli funksiyalar</div><div class="leadItem">✓ Taxminiy budjet oralig‘i</div></div>
+  </div>
+  <form class="form" id="leadForm">
+    <div class="row"><div class="field"><label>Ismingiz *</label><input id="name" required placeholder="Masalan, Aziz"></div><div class="field"><label>Telefon *</label><input id="phone" required placeholder="+998 90 123 45 67"></div></div>
+    <div class="row"><div class="field"><label>Biznes / loyiha turi</label><select id="business"><option>Biznes sayti</option><option>Landing page</option><option>Online do‘kon</option><option>Ta’lim platformasi</option><option>Klinika</option><option>Restoran / kafe</option><option>Ko‘chmas mulk</option><option>Boshqa</option></select></div><div class="field"><label>Budjet</label><select id="budget"><option>Aniqlanmagan</option><option>1–3 mln so‘m</option><option>3–7 mln so‘m</option><option>7–15 mln so‘m</option><option>15 mln+ so‘m</option></select></div></div>
+    <div class="field"><label>G‘oyangiz *</label><textarea id="idea" required placeholder="Sayt kim uchun? Nima sotiladi yoki qanday xizmat ko‘rsatiladi? Saytda odam nima qila olishi kerak?"></textarea></div>
+    <button class="btn" style="width:100%;padding:15px" type="submit">📲 Pyramid Studio’ga yuborish</button>
+    <div class="success" id="success">So‘rovingiz qabul qilindi. Tez orada bog‘lanamiz.</div>
+    <div class="formNote">Ariza xavfsiz tarzda onlayn bazaga yuboriladi. Aloqa: +998 93 573 77 16.</div>
+  </form>
+</div>
+</section>
+
+<section class="contact">
+<div class="ey">ALOQA</div><h2 class="title">Keyingi kuchli sayt sizniki bo‘lishi mumkin.</h2><div class="phone">+998 93 573 77 16</div><div class="actions" style="justify-content:center"><a class="btn" href="tel:+998935737716">📞 Qo‘ng‘iroq</a><a class="ghost" href="https://wa.me/998935737716?text=Salom%20Pyramid%20Studio%2C%20sayt%20bo%27yicha%20gaplashmoqchiman." target="_blank">WhatsApp</a></div>
+</section>
+
+<button class="chatfab" id="chatFab">💬 Pyramid AI</button>
+<div class="chatbox" id="chatBox">
+  <div class="chathead"><div><b>Pyramid AI konsultant</b><br><small>● g‘oyani aniqlashtirish demo</small></div><button id="closeChat" class="close">×</button></div>
+  <div class="chatbody" id="chatBody"><div class="msg ai">Salom! 👋 Qanday sayt qurmoqchisiz? G‘oyangizni oddiy qilib yozing. Men sizga struktura, funksiyalar va keyingi qadamlarni tavsiya qilaman.</div></div>
+  <div class="chips"><button class="chip">Klinika</button><button class="chip">Online do‘kon</button><button class="chip">Ta’lim platformasi</button><button class="chip">Restoran</button></div>
+  <div class="composer"><input id="chatInput" placeholder="Masalan: klinika sayti kerak..."><button class="send" id="sendBtn">➤</button></div>
+</div>
+
+<div class="modal" id="demoModal"><div class="modalCard"><div class="modalTop"><div><div class="ey">INTERAKTIV NAMUNA</div><h3 id="modalTitle" style="font-size:30px;margin:8px 0">Demo</h3></div><button class="close" onclick="closeDemo()">×</button></div><div id="modalDemo" class="modalDemo"></div><div class="projectActions"><button class="btn" onclick="demoToChat()">Menga ham shunday sayt kerak</button><button class="sm" onclick="closeDemo()">Yopish</button></div></div></div>
+
+<footer><b>PYRAMID STUDIO</b><span>Web Design • Development • AI • Search Ready</span><span>© 2026</span></footer>
+
+<script>
+const OWNER='998935737716';
+const fab=document.getElementById('chatFab'),box=document.getElementById('chatBox'),body=document.getElementById('chatBody'),input=document.getElementById('chatInput');
+
+function openChat(){
+  box.classList.add('open');
+  setTimeout(()=>input.focus(),200);
+}
+
+function serviceChat(t){
+  openChat();
+  input.value=t;
+  send();
+}
+
+fab.onclick=openChat;
+document.getElementById('closeChat').onclick=()=>box.classList.remove('open');
+
+function addMsg(t,c){
+  const d=document.createElement('div');
+  d.className='msg '+c;
+  d.textContent=t;
+  body.appendChild(d);
+  body.scrollTop=body.scrollHeight;
+}
+
+function aiReply(q){
+  let s=q.toLowerCase();
+
+  if(/klinika|doktor|tibb/.test(s))
+    return "Klinika uchun yaxshi struktura:\n• bosh sahifa va ishonch bloki\n• shifokorlar profili\n• xizmatlar / diagnostika\n• qabulga yozilish\n• lokatsiya va kontakt\n• FAQ\n\nKeyingi savol: faqat tanishtiruv sayti kerakmi yoki online booking ham bo‘lsinmi?";
+
+  if(/do.kon|shop|mahsulot|sot/.test(s))
+    return "Online do‘kon uchun:\n• katalog va kategoriyalar\n• mahsulot kartasi\n• qidiruv / filtr\n• savat\n• buyurtma formasi\n• mobil-first checkout\n\nTaxminan nechta mahsulot bo‘ladi?";
+
+  if(/ta.lim|maktab|kurs|o.quv/.test(s))
+    return "Ta’lim platformasi uchun:\n• onboarding / profil\n• diagnostika yoki test\n• dars yo‘li\n• progress\n• o‘yin va XP\n• ustoz / AI yordamchi\n\nKimlar o‘qiydi: bolalar, abituriyentlar yoki kattalar?";
+
+  if(/restoran|kafe|coffee|ovqat/.test(s))
+    return "Restoran/kafe uchun:\n• kuchli hero\n• menyu\n• bestsellerlar\n• lokatsiya\n• bron / buyurtma\n• Instagram va kontakt\n\nYetkazib berish funksiyasi ham kerakmi?";
+
+  if(/google|seo|search/.test(s))
+    return "Google uchun saytni texnik tayyorlashda title/description, sitemap.xml, robots.txt, mobil tezlik, HTTPS va Search Console bosqichlari muhim. Google indeksatsiya yoki 1-o‘rinni kafolatlab bo‘lmaydi, lekin saytni to‘g‘ri tayyorlash mumkin.";
+
+  if(/narx|budjet|qancha/.test(s))
+    return "Narx sahifalar soni, dizayn darajasi va funksiyalarga bog‘liq. Siz biznes turi + kerakli funksiyalarni yozing; keyin pastdagi buyurtma formasiga o‘tib Pyramid Studio bilan kelishishingiz mumkin.";
+
+  return "Zo‘r g‘oya. Uni briefga aylantirish uchun 3 savol:\n1) sayt kim uchun?\n2) asosiy maqsad — sotuv, tanishtirish yoki servis?\n3) foydalanuvchi saytda aynan nima qila olishi kerak?\n\nShularni yozsangiz, men struktura tavsiya qilaman.";
+}
+
+function send(){
+  const q=input.value.trim();
+  if(!q)return;
+  addMsg(q,'me');
+  input.value='';
+  setTimeout(()=>addMsg(aiReply(q),'ai'),320);
+}
+
+document.getElementById('sendBtn').onclick=send;
+
+input.addEventListener('keydown',e=>{
+  if(e.key==='Enter')send();
+});
+
+document.querySelectorAll('.chip').forEach(c=>{
+  c.onclick=()=>{
+    input.value=c.textContent;
+    send();
+  };
+});
+
+const SUPABASE_URL='https://fcdftduwoiaahpuqdawd.supabase.co';
+const SUPABASE_KEY='sb_publishable_PYznTO5fYgCK2LjDsh47Zw_sCWQeGhV';
+
+const SESSION_KEY='pyramid_visit_logged';
+
+async function trackVisit(){
+  if(sessionStorage.getItem(SESSION_KEY))return;
+
+  try{
+    await fetch(`${SUPABASE_URL}/rest/v1/visits`,{
+      method:'POST',
+      headers:{
+        apikey:SUPABASE_KEY,
+        Authorization:`Bearer ${SUPABASE_KEY}`,
+        'Content-Type':'application/json',
+        Prefer:'return=minimal'
+      },
+      body:JSON.stringify({
+        page:location.pathname || '/',
+        referrer:document.referrer || 'direct',
+        device:/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop'
+      })
+    });
+
+    sessionStorage.setItem(SESSION_KEY,'1');
+  }catch(e){}
+}
+
+trackVisit();
+
+document.getElementById('leadForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+
+  const form=e.currentTarget;
+  const btn=form.querySelector('button[type=submit]');
+  const success=document.getElementById('success');
+
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const business=document.getElementById('business').value;
+  const budget=document.getElementById('budget').value;
+  const idea=document.getElementById('idea').value.trim();
+
+  if(!name||!phone||!idea)return;
+
+  btn.disabled=true;
+  btn.textContent='⏳ Yuborilmoqda...';
+  success.style.display='none';
+
+  try{
+    const r=await fetch(`${SUPABASE_URL}/rest/v1/leads`,{
+      method:'POST',
+      headers:{
+        apikey:SUPABASE_KEY,
+        Authorization:`Bearer ${SUPABASE_KEY}`,
+        'Content-Type':'application/json',
+        Prefer:'return=minimal'
+      },
+      body:JSON.stringify({
+        name,
+        phone,
+        project_type:business,
+        budget,
+        idea,
+        status:'Yangi',
+        source:'website'
+      })
+    });
+
+    if(!r.ok)throw new Error(await r.text());
+
+    success.textContent='✅ So‘rovingiz qabul qilindi. Tez orada bog‘lanamiz.';
+    success.style.display='block';
+
+    localStorage.setItem('pyramidLastLead',JSON.stringify({
+      name,
+      phone,
+      business,
+      budget,
+      idea,
+      date:new Date().toISOString()
+    }));
+
+    form.reset();
+  }catch(err){
+    console.error(err);
+
+    success.textContent='⚠️ Arizani yuborishda xatolik bo‘ldi. Iltimos, +998 93 573 77 16 raqamiga qo‘ng‘iroq qiling yoki WhatsApp orqali yozing.';
+    success.style.display='block';
+  }finally{
+    btn.disabled=false;
+    btn.textContent='📲 Pyramid Studio’ga yuborish';
+  }
+});
+
+let currentDemo='clinic';
+
+function openDemo(type){
+  currentDemo=type;
+
+  const modal=document.getElementById('demoModal');
+  const title=document.getElementById('modalTitle');
+  const d=document.getElementById('modalDemo');
+
+  if(type==='clinic'){
+    title.textContent='NOVA Medical — klinika konsepti';
+    d.className='modalDemo demoClinic';
+
+    d.innerHTML=`
+      <div class="demoHeader">
+        <span>NOVA MEDICAL</span>
+        <span>Doctors &nbsp; Services &nbsp; Contact</span>
+      </div>
+      <div class="demoHero">
+        <div>
+          <small>PRIVATE MEDICAL CENTER</small>
+          <h4>Care you can trust.</h4>
+          <p>Shifokorni toping, xizmatni tanlang va qabulga yoziling.</p>
+          <button class="sm">Book appointment</button>
+        </div>
+        <div class="demoImg"></div>
+      </div>
+      <div class="demoBlocks">
+        <div><b>12+ doctors</b><br><small>Expert team</small></div>
+        <div><b>24/7</b><br><small>Support</small></div>
+        <div><b>Online booking</b><br><small>Fast appointment</small></div>
+      </div>`;
+  }else{
+    title.textContent='Urban Roast — restoran konsepti';
+    d.className='modalDemo demoCoffee';
+
+    d.innerHTML=`
+      <div class="demoHeader">
+        <span>URBAN ROAST</span>
+        <span>Menu &nbsp; Story &nbsp; Location</span>
+      </div>
+      <div class="demoHero">
+        <div>
+          <small>SPECIALTY COFFEE</small>
+          <h4>Morning starts here.</h4>
+          <p>Minimal, iliq va buyurtmaga yo‘naltirilgan restoran tajribasi.</p>
+          <button class="sm">Explore menu</button>
+        </div>
+        <div class="demoImg"></div>
+      </div>
+      <div class="demoBlocks">
+        <div><b>Signature menu</b></div>
+        <div><b>Table booking</b></div>
+        <div><b>Map & delivery</b></div>
+      </div>`;
+  }
+
+  modal.classList.add('open');
+}
+
+function closeDemo(){
+  document.getElementById('demoModal').classList.remove('open');
+}
+
+function demoToChat(){
+  closeDemo();
+
+  serviceChat(
+    currentDemo==='clinic'
+      ? 'Menga NOVA Medical kabi klinika sayti kerak'
+      : 'Menga Urban Roast kabi restoran sayti kerak'
+  );
+}
+
+document.getElementById('demoModal').addEventListener('click',e=>{
+  if(e.target.id==='demoModal')closeDemo();
+});
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));
+}
+</script>
+</body>
+</html>
